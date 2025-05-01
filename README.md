@@ -5,9 +5,15 @@ Contracts on Trac Network are infrastructure.
 This means that either each participant executes contracts in distributed apps (embedded contracts).
 Alternatively a group of Peers (nodes) may accept transactions from external wallets to offer a web3 experience.
 
+The most important files to check out and learn how everything works are:
+
+- /contract/protocol.js: defines the framework for the contract.
+- /contract/contract.js: the actual contract.
+- /index.js: the setup for the contract app that everyone uses (basicall the entire package represents an app)
+
 Release 1 (R1) must be used alongside Trac Network R1 releases to maintain contract consistency.
 
-The MSB is utilizing the [Pear Runtime and Holepunch](https://pears.com/).
+Trac Apps is utilize the [Pear Runtime and Holepunch](https://pears.com/).
 
 ## Install
 
