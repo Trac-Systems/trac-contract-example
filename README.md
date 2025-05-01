@@ -13,7 +13,7 @@ The most important files to check out and learn how everything works are:
 
 Release 1 (R1) must be used alongside Trac Network R1 releases to maintain contract consistency.
 
-Trac Apps is utilize the [Pear Runtime and Holepunch](https://pears.com/).
+Trac Apps utilizes the [Pear Runtime and Holepunch](https://pears.com/).
 
 ## Install
 
