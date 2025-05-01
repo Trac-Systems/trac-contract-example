@@ -94,8 +94,8 @@ class SampleContract extends Contract {
     /**
      * Now we are using the schema-validated function defined in the constructor.
      *
-     * The function also showcases some of the hand features like safe functions
-     * to prevent throws and safe biging/decimal conversion.
+     * The function also showcases some of the handy features like safe functions
+     * to prevent throws and safe bigint/decimal conversion.
      */
     async submitSomething(){
         // the value of some_key shouldn't be empty, let's check that
@@ -127,7 +127,7 @@ class SampleContract extends Contract {
         // making sure it didn't fail (be aware of false-positives if null is passed to safeClone)
         this.assert(cloned !== null);
 
-        // and now let's tringify the cloned value
+        // and now let's stringify the cloned value
         const stringified = this.protocol.safeJsonStringify(cloned);
 
         // and, you guessed it, best is to assert against null once more
