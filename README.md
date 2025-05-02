@@ -70,6 +70,7 @@ pear run . store1
 - In the "pear" section **"type": "terminal"** to **"type": "desktop"**
 - Run: pear run -d . store1
 - Wait for the app to load. -d starts the developer console. Check the console output.
+- Note: mobile app deployment is in the works by the team.
 
 # Web3
 If your contract is not supposed to run as user-installable app, you can run it as server instead.
