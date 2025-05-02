@@ -41,7 +41,7 @@ class SampleContract extends Contract {
 
         // simple function registration.
         // since this function does not expect value payload, no need to sanitize.
-        // note that the function must match the type as set in Protocol.maxTxCommand()
+        // note that the function must match the type as set in Protocol.mapTxCommand()
         this.addFunction('storeSomething');
 
         // now we register the function with a schema to prevent malicious inputs.
