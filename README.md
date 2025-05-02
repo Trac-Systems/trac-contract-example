@@ -82,6 +82,9 @@ Note: Trac Network mainnet is not released yet and there are no web wallets at t
 But you may create an identity wallet to sign off transactions for web3 apps. 
 We recommend to use the library ["micro-key-producer/slip10.js"](https://www.npmjs.com/package/micro-key-producer) package for this (using ed25519 keys).
 
+You can find all built-in api functions in trac-peer/src/api.js
+Custom api functions (per-app) can be found in /contract/protocol.js and vary be the different app projects.
+
 ```js
 peer_opts.api_tx_exposed = true;
 peer_opts.api_msg_exposed = true;
