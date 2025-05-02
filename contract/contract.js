@@ -11,6 +11,7 @@ class SampleContract extends Contract {
      * Please avoid using the following in your contract functions:
      *
      * No try-catch
+     * No throws
      * No random values
      * No http / api calls
      * No super complex, costly calculations
