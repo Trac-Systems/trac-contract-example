@@ -39,11 +39,11 @@ pear run . store1
 
 - Choose option 1)
 - Copy and backup the seedphrase
-- Copy the "Peer Writer" key from the Peer section
+- Copy the "Peer Writer" key from the Peer section (basically the contract address)
 - With a text editor, open the file index.js in document root
 - Replace the bootstrap address in the example section (not the MSB) with the copied writer address
 - Choose a channel name (exactly 32 characters)
-- Run again: pear run . store1
+- Type /exit and hit enter, then run again: pear run . store1
 - After the options appear, type "/add_admin --address ababab..." and hit enter
 - Your instance is now the Bootstrap and admin peer of your contract network.
 - Keep your bootstrap node running
