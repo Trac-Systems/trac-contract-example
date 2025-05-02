@@ -3,6 +3,7 @@
 Contracts on Trac Network are infrastructure. 
 
 This means each participant executes contracts in distributed apps (App3: decentralized apps / embedded contracts).
+
 Alternatively a group of Peers (nodes) may accept transactions from external wallets to offer traditional web3 experiences.
 
 The most important files to check out and learn how everything works are:
