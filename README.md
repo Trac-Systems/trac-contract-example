@@ -64,14 +64,14 @@ pear run . store1
 - Users may join using the exact same setup in index.js and start using "pear run . store1"
 - For more features, play around with the evailable system and chat options.
 
-# Desktop Mode (App3)
+# App3 (Desktop)
 - To see some magic, edit the package.json and edit the following fields:
 - **"main": "index.js"** to **"main": "desktop/index.html"**
 - In the "pear" section **"type": "terminal"** to **"type": "desktop"**
 - Run: pear run -d . store1
 - Wait for the app to load. -d starts the developer console. Check the console output.
 
-# Web3 Mode
+# Web3
 If your contract is not supposed to run as user-installable app, you can run it as server instead.
 There is no special setup required other than exposing the Protocol api to your services.
 
