@@ -7,9 +7,11 @@ Alternatively a group of Peers (nodes) may accept transactions from external wal
 
 The most important files to check out and learn how everything works are:
 
-- /contract/protocol.js: defines the framework for the contract.
-- /contract/contract.js: the actual contract.
-- /index.js: the setup for the contract app that everyone uses (basicall the entire package represents an app)
+- **/contract/protocol.js**: defines the framework for the contract.
+- **/contract/contract.js**: the actual contract.
+- **/features/timer/index.js**: a Feature (aka oracle) for the contract
+- **/desktop/index.html** and **/desktop/index.js**: to learn running in desktop mode (see bottom notes)
+- **/index.js**: the setup for the contract app that everyone uses (basicall the entire package represents an app)
 
 Release 1 (R1) must be used alongside Trac Network R1 releases to maintain contract consistency.
 
