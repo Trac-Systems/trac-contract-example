@@ -44,7 +44,7 @@ pear run . store1
 - Replace the bootstrap address in the example section (not the MSB) with the copied writer address
 - Choose a channel name (exactly 32 characters)
 - Type /exit and hit enter, then run again: pear run . store1
-- After the options appear, type "/add_admin --address ababab..." and hit enter
+- After the options appear, type "/add_admin --address YourPeerWriterKey" and hit enter
 - Your instance is now the Bootstrap and admin peer of your contract network.
 - Keep your bootstrap node running
 - For production contracts, it is strongly recommended to add a couple of indexers. See below.
@@ -53,7 +53,7 @@ pear run . store1
 
 - Install on different machines than the Bootstrap's (ideally different data centers) with the exact setup in index.js
 - Upon start ("pear run . store1") copy the "Peer Writer" key
-- In the Bootstrap node screen, add the indexer: "/add_indexer --key adfadf..."
+- In the Bootstrap node screen, add the indexer: "/add_indexer --key TheIndexerWriterKey."
 - You should see a success confirmation
 - Usually 2 indexers on different locations are enough, we recommend 2 to max. 4 in addition to the Bootstrap
 
