@@ -24,8 +24,6 @@ Trac Apps utilizes the [Pear Runtime and Holepunch](https://pears.com/).
 git clone git@github.com:Trac-Systems/trac-contract-example.git
 ```
 
-## Usage
-
 While the Trac apps support native node-js, it is encouraged to use Pear:
 
 ```js
@@ -34,6 +32,8 @@ npm install -g pear
 npm install
 pear run . store1
 ```
+
+## Setup
 
 **Deploy Bootstrap (admin):**
 
