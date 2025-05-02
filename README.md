@@ -69,7 +69,8 @@ pear run . store1
 - **"main": "index.js"** to **"main": "desktop/index.html"**
 - In the "pear" section **"type": "terminal"** to **"type": "desktop"**
 - Run: pear run -d . store1
-- Wait for the app to load. -d starts the developer console. Check the console output.
+- Wait for the app to load. -d starts the developer console. Check the console output
+- Each desktop instance creates its own identity (wallet) automatically upon first start
 - Note: mobile app deployment is in the works by the team.
 
 # Web3
