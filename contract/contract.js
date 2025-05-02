@@ -16,6 +16,7 @@ class SampleContract extends Contract {
      * No http / api calls
      * No super complex, costly calculations
      * No massive storage of data.
+     * Never, ever modify "this.op" or "this.value", only read from it and use safeClone to modify.
      * ... basically nothing that can lead to inconsistencies akin to Blockchain smart contracts.
      *
      * Running a contract on Trac gives you a lot of freedom, but it comes with additional responsibility.
@@ -57,6 +58,38 @@ class SampleContract extends Contract {
                 op : { type : "string", min : 1, max: 128 },
                 some_key : { type : "string", min : 1, max: 128 }
             }
+        });
+
+        // in preparation to add an external Feature (aka oracle), we add a loose schema to make sure
+        // the Feature key is given properly. it's not required, but showcases that even these can be
+        // sanitized.
+        this.addSchema('feature_entry', {
+            key : { type : "string", min : 1, max: 256 },
+            value : { type : "any" }
+        });
+
+        // now we are registering the timer feature itself (see /features/time/ in package).
+        // note the naming convention for the feature name <feature-name>_feature.
+        // the feature name is given in app setup, when passing the feature classes.
+        const _this = this;
+
+        // this feature registers incoming data from the Feature and if the right key is given,
+        // stores it into the smart contract storage.
+        // the stored data can then be further used in regular contract functions.
+        this.addFeature('timer_feature', async function(){
+            if(false === _this.validateSchema('feature_entry', _this.op)) return;
+            if(_this.op.key === 'currentTime') {
+                if(null === await _this.get('currentTime')) console.log('timer started at', _this.op.value);
+                await _this.put(_this.op.key, _this.op.value);
+            }
+        });
+
+        // last but not least, you may intercept messages from the built-in
+        // chat system, and perform actions similar to features to enrich your
+        // contract. check the _this.op value after you enabled the chat system
+        // and posted a few messages.
+        this.messageHandler(async function(){
+            console.log('message triggered contract', _this.op);
         });
     }
 
@@ -124,6 +157,10 @@ class SampleContract extends Contract {
 
         // let's clone the value
         const cloned = this.protocol.safeClone(this.value);
+
+        // we want to pass the time from the timer feature.
+        // since mmodifications of this.value is not allowed, add this to the clone instead for storing:
+        cloned['timestamp'] = await this.get('currentTime');
 
         // making sure it didn't fail (be aware of false-positives if null is passed to safeClone)
         this.assert(cloned !== null);

@@ -1,8 +1,9 @@
 import {getStorePath} from './src/functions.js';
 import {App} from './src/app.js';
+export * from 'trac-peer/src/functions.js'
 import {default as SampleProtocol} from "./contract/protocol";
 import {default as SampleContract} from "./contract/contract";
-export * from 'trac-peer/src/functions.js'
+import {Timer} from "./features/timer/index.js";
 
 console.log('Storage path:', getStorePath());
 
@@ -26,5 +27,19 @@ peer_opts.store_name = getStorePath() + '/example';
 peer_opts.api_tx_exposed = true;
 peer_opts.api_msg_exposed = true;
 
-export const app = new App(msb_opts, peer_opts);
+///// FEATURES
+// Pass multiple features (aka oracles) to the peer and inject data into
+// your contract. Can also go the other way, depending on how you need it.
+// You may add as many Features as you wish.
+// In /src/app.js, the Features are being executed by the admin (usually the Peer Bootstrap)
+const timer_opts = {};
+timer_opts.update_interval = 10_000;
+
+export const app = new App(msb_opts, peer_opts, [
+    {
+        name : 'timer',
+        class : Timer,
+        opts : timer_opts
+    }
+]);
 await app.start();

@@ -61,3 +61,26 @@ pear run . store1
 - Any other Peer joining with the exact same setup can join the network and execute contract functions and transactions.
 - Users may join using the exact same setup in index.js and start using "pear run . store1"
 - For more features, play around with the evailable system and chat options.
+
+# Desktop Mode
+- To see some magic, edit the package.json and edit the following fields:
+- **"main": "index.js"** to **"main": "desktop/index.html"**
+- In the "pear" section **"type": "terminal"** to **"type": "desktop"**
+- Run: pear run -d . store1
+- Wait for the app to load. -d starts the developer console. Check the console output.
+
+# Web3 Mode
+If your contract is not supposed to run as user-installable app, you can run it as server instead.
+There is no special setup required other than exposing the Protocol api to your services.
+
+To allow signers with webwallets to submit transactions through your server, enable the transaction API.
+For chat messages, accordingly. See below.
+
+Note: Trac Network mainnet is not released yet and there are no web wallets at this moment. 
+But you may create an identity wallet to sign off transactions for web3 apps. 
+We recommend to use the library ["micro-key-producer/slip10.js"](https://www.npmjs.com/package/micro-key-producer) package for this (using ed25519 keys).
+
+```js
+peer_opts.api_tx_exposed = true;
+peer_opts.api_msg_exposed = true;
+```
