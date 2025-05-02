@@ -63,7 +63,7 @@ pear run . store1
 - To enable auto-join, in the screen of the Bootstrap enter "/set_auto_add_writers --enabled 1"
 - Any other Peer joining with the exact same setup can join the network and execute contract functions and transactions.
 - Users may join using the exact same setup in index.js and start using "pear run . store1"
-- For more features, play around with the evailable system and chat options.
+- For more features, play around with the available system and chat options.
 
 # App3
 - To see some magic, edit the package.json and edit the following fields:
