@@ -65,7 +65,7 @@ pear run . store1
 - Users may join using the exact same setup in index.js and start using "pear run . store1"
 - For more features, play around with the evailable system and chat options.
 
-# App3 (Desktop)
+# App3
 - To see some magic, edit the package.json and edit the following fields:
 - **"main": "index.js"** to **"main": "desktop/index.html"**
 - In the "pear" section **"type": "terminal"** to **"type": "desktop"**
