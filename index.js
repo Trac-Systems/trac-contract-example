@@ -11,7 +11,7 @@ console.log('Storage path:', getStorePath());
 // To run this example, you don't need to create your own MSB
 // Instead go with the options as-is. The below bootstrap is an MSB testnet (gasless).
 const msb_opts = {};
-msb_opts.bootstrap = 'cdcb126766cb2673bc14f3e91be61150504d0f97e5055bbc430193091fe96bba';
+msb_opts.bootstrap = '251e795836f962b4ca7db21b4dd5b368bfcb6c549a69a989f752918337aaed87';
 msb_opts.channel = '0000000000000000000000examplemsb';
 msb_opts.store_name = getStorePath() + '/msb';
 
