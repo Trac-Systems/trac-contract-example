@@ -1,8 +1,8 @@
 import {getStorePath} from './src/functions.js';
 import {App} from './src/app.js';
 export * from 'trac-peer/src/functions.js'
-import {default as SampleProtocol} from "./contract/protocol";
-import {default as SampleContract} from "./contract/contract";
+import {default as SampleProtocol} from "./contract/protocol.js";
+import {default as SampleContract} from "./contract/contract.js";
 import {Timer} from "./features/timer/index.js";
 
 console.log('Storage path:', getStorePath());
@@ -21,7 +21,7 @@ msb_opts.store_name = getStorePath() + '/msb';
 const peer_opts = {};
 peer_opts.protocol = SampleProtocol;
 peer_opts.contract = SampleContract;
-peer_opts.bootstrap = '0000000000000000000000000000000000000000000000000000000000000000';
+peer_opts.bootstrap = '06d535e94edfabcb0018e4d7da0076410f7a3258dd65b4ef0ae1771ec515e5d4';
 peer_opts.channel = '0000000000000000000000000example';
 peer_opts.store_name = getStorePath() + '/example';
 peer_opts.api_tx_exposed = true;

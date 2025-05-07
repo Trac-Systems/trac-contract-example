@@ -67,7 +67,7 @@ pear run . store1
 
 # App3
 - To see some magic, edit the package.json and edit the following fields:
-- **"main": "index.js"** to **"main": "desktop/index.html"**
+- **"main": "index.js"** to **"main": "index.html"**
 - In the "pear" section **"type": "terminal"** to **"type": "desktop"**
 - Run: pear run -d . store1
 - Wait for the app to load. -d starts the developer console. Check the console output
