@@ -33,7 +33,7 @@ peer_opts.api_msg_exposed = true;
 // You may add as many Features as you wish.
 // In /src/app.js, the Features are being executed by the admin (usually the Peer Bootstrap)
 const timer_opts = {};
-timer_opts.update_interval = 10_000;
+timer_opts.update_interval = 60_000;
 
 export const app = new App(msb_opts, peer_opts, [
     {
