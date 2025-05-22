@@ -1,10 +1,10 @@
 {
-  "name": "trac-example",
+  "name": "trac20",
   "version": "0.0.1",
   "type": "module",
   "main": "index.js",
   "pear": {
-    "name": "trac-example",
+    "name": "trac20",
     "type": "terminal",
     "gui": {
       "backgroundColor": "#1F2430",
@@ -13,7 +13,7 @@
     }
   },
   "dependencies": {
-    "trac-peer": "^0.1.84",
+    "trac-peer": "^0.1.93",
     "trac-msb": "^0.1.76",
     "htm": "^3.1.1",
     "react": "^19.1.0",
