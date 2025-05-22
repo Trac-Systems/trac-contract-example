@@ -46,8 +46,8 @@ class Trac20Contract extends Contract {
         if(null === _supply || _supply <= 0n) return new Error('Invalid supply');
         const key = 'd/'+this.protocol.safeJsonStringify(this.value.tick);
         const deployment = await this.get(key);
-        if(null !== deployment) return new Error('Token exists already.');
-        const _deployment = this.protocol.safeClone(this.deploy());
+        if(null !== deployment) return new Error('Token exists already');
+        const _deployment = this.protocol.safeClone(this.value);
         _deployment.amt = _amt.toString();
         _deployment.supply = _supply.toString();
         _deployment.dec = _dec;
@@ -60,7 +60,7 @@ class Trac20Contract extends Contract {
         await this.put('dli/'+length, key);
         await this.put(length_key, length + 1);
         await this.put(key, _deployment);
-        if(true === this.options.enable_logs){
+        if(true === this.protocol.peer.options.enable_logs){
             console.log('Deployed ticker', this.value.tick,
                 ',',
                 'supply:', this.protocol.fromBigIntString(_deployment.supply, _deployment.dec),
@@ -92,7 +92,7 @@ class Trac20Contract extends Contract {
             deployment.com = com.toString();
             await this.put('d/'+tick, deployment);
             await this.put('b/'+this.address+'/'+tick, balance.toString());
-            if(true === this.options.enable_logs){
+            if(true === this.protocol.peer.options.enable_logs){
                 console.log('Minting ticker', this.value.tick,
                     ',',
                     'completed ', this.protocol.fromBigIntString(deployment.com, deployment.dec),
@@ -130,7 +130,7 @@ class Trac20Contract extends Contract {
         to_balance += amt;
         await this.put('b/'+this.address+'/'+tick, from_balance.toString());
         await this.put('b/'+this.value.addr+'/'+tick, to_balance.toString());
-        if(true === this.options.enable_logs){
+        if(true === this.protocol.peer.options.enable_logs){
             console.log('Transferred ticker', this.value.tick,
                 ',',
                 'amount', this.protocol.fromBigIntString(amt.toString(), deployment.dec),
