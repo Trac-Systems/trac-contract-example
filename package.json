@@ -2,10 +2,10 @@
   "name": "trac-example",
   "version": "0.0.1",
   "type": "module",
-  "main": "index.html",
+  "main": "index.js",
   "pear": {
     "name": "trac-example",
-    "type": "desktop",
+    "type": "terminal",
     "gui": {
       "backgroundColor": "#1F2430",
       "height": "540",
@@ -13,10 +13,10 @@
     }
   },
   "dependencies": {
-    "trac-peer": "0.1.66",
-    "trac-msb": "0.1.67",
+    "trac-peer": "^0.2.5",
+    "trac-msb": "^0.1.82",
     "htm": "^3.1.1",
-    "react": "^19.1.0",
-    "react-dom": "^19.1.0"
+    "react": "^19.2.1",
+    "react-dom": "^19.2.1"
   }
 }

@@ -11,8 +11,8 @@ console.log('Storage path:', getStorePath());
 // To run this example, you don't need to create your own MSB
 // Instead go with the options as-is. The below bootstrap is an MSB testnet (gasless).
 const msb_opts = {};
-msb_opts.bootstrap = 'a0d69a527d575b35477f49f91a7cfc808af2c78683b4d83defaaee00317a7408';
-msb_opts.channel = '0000000000000000000000examplemsb';
+msb_opts.bootstrap = 'a4951e5f744e2a9ceeb875a7965762481dab0a7bb0531a71568e34bf7abd2c53';
+msb_opts.channel = '0002tracnetworkmainsettlementbus';
 msb_opts.store_name = getStorePath() + '/msb';
 
 ///// SAMPLE CONTRACT SETUP
@@ -21,7 +21,7 @@ msb_opts.store_name = getStorePath() + '/msb';
 const peer_opts = {};
 peer_opts.protocol = SampleProtocol;
 peer_opts.contract = SampleContract;
-peer_opts.bootstrap = '06d535e94edfabcb0018e4d7da0076410f7a3258dd65b4ef0ae1771ec515e5d4';
+peer_opts.bootstrap = '0000000000000000000000000000000000000000000000000000000000000000';
 peer_opts.channel = '0000000000000000000000000example';
 peer_opts.store_name = getStorePath() + '/example';
 peer_opts.api_tx_exposed = true;
