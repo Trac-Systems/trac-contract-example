@@ -54,7 +54,7 @@ pear run . store1
 - Install on different machines than the Bootstrap's (ideally different data centers) with the exact setup in index.js
 - Upon start ("pear run . store1") copy the "Peer Writer" key
 - In the Bootstrap node screen, add the indexer: "/add_indexer --key TheIndexerWriterKey."
-- You should see a success confirmation
+- You should see a success confirmation 
 - Usually 2 indexers on different locations are enough, we recommend 2 to max. 4 in addition to the Bootstrap
 
 **Enable others to join and to transact:**
